@@ -1,3 +1,6 @@
+Geni Rails Example
+==================
+
 About
 -----
 
