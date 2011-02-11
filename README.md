@@ -1,8 +1,10 @@
-h2. About
+About
+-----
 
 This is a simple Rails app demonstrating the usage of the [geni gem](http://github.com/aurels/geni).
 
-h2. Getting Started
+Getting Started
+---------------
 
 Clone the repository :
 
