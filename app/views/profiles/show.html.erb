@@ -1,0 +1,69 @@
+<% if @profile.mugshot_urls.has_key?('large') %>
+	<%= image_tag @profile.mugshot_urls['large'], :style => 'float: right;' %>
+<% end %>
+
+<h2><%= @profile.name %></h2>
+
+<p><strong>Gender</strong> : <%= @profile.gender %></p>
+
+<p><strong>Birth date</strong> : <%= @profile.birth_date %></p>
+<p><strong>Birth location</strong> : <%= @profile.birth_location %></p>
+
+<p><strong>Death date</strong> : <%= @profile.death_date %></p>
+<p><strong>Death location</strong> : <%= @profile.death_location %></p>
+
+<% if @profile.father.present? %>
+	<h3>Father</h3>
+	<%= link_to @profile.father.name, profile_path(:id => @profile.father.id) %>
+	<br /><br />
+	<%= profile_medium_picture(@profile.father) %>
+<% end %>
+
+<% if @profile.mother.present? %>
+	<h3>Mother</h3>
+	<%= link_to @profile.mother.name, profile_path(:id => @profile.mother.id) %>
+	<br /><br />
+	<%= profile_medium_picture(@profile.mother) %>
+<% end %>
+
+<% if @profile.children.any? %>
+	<h3>Children</h3>
+	<ul>
+		<% @profile.children.each do |child| %>
+			<li>
+				<%= link_to child.name, profile_path(:id => child.id) %>
+				<br /><br />
+				<%= profile_medium_picture(child) %>
+				<br /><br />
+			</li>
+		<% end %>
+	</ul>
+<% end %>
+
+<% if @profile.partners.any? %>
+	<h3>Partners</h3>
+	<ul>
+		<% @profile.partners.each do |partner| %>
+			<li>
+				<%= link_to partner.name, profile_path(:id => partner.id) %>
+				<br /><br />
+				<%= profile_medium_picture(partner) %>
+				<br /><br />
+			</li>
+		<% end %>
+	</ul>
+<% end %>
+
+<% if @profile.siblings.any? %>
+	<h3>Siblings</h3>
+	<ul>
+		<% @profile.siblings.each do |sibling| %>
+			<li>
+				<%= link_to sibling.name, profile_path(:id => sibling.id) %>
+				<br /><br />
+				<%= profile_medium_picture(sibling) %>
+				<br /><br />
+			</li>
+		<% end %>
+	</ul>
+<% end %>
