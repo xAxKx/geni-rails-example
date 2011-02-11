@@ -18,6 +18,8 @@ Configure your DB params in *config/database.yml*, copy the geni intializer and 
     $ cp config/initializers/geni.rb.example config/initializers/geni.rb
     $ emacs config/initializers/geni.rb
 
+You can register your app [on this Geni page](http://www.geni.com/apps).
+
 Install dependencies :
 
     $ bundle install
